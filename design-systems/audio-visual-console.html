@@ -382,22 +382,35 @@
       }
 
       .form-band {
-        padding: 8.33333vw;
+        padding: 2rem 8.33333vw;
         background: var(--surface-soft);
-        font-weight: 700;
+      }
+
+      .form-band h2 {
+        margin-bottom: 0.85rem;
       }
 
       form {
         display: grid;
-        gap: 1rem;
-        max-width: 68rem;
+        grid-template-columns: 8rem minmax(0, 1fr);
+        gap: 0.65rem 1rem;
+        max-width: 46rem;
+        align-items: center;
+      }
+
+      form label {
+        grid-column: 1;
+        font-size: 0.875rem;
+        line-height: 1.3;
+        font-weight: 800;
       }
 
       input,
       select,
       textarea {
+        grid-column: 2;
         width: 100%;
-        padding: 0.28125rem 0.5rem;
+        padding: 0.35rem 0.5rem;
         color: var(--text);
         font: inherit;
         border: 0.125rem solid var(--border);
@@ -406,7 +419,7 @@
       }
 
       textarea {
-        min-height: 7.5rem;
+        min-height: 4.5rem;
         resize: vertical;
       }
 
@@ -510,6 +523,22 @@
         .form-band {
           padding-left: 1rem;
           padding-right: 1rem;
+        }
+
+        form {
+          grid-template-columns: 1fr;
+          gap: 0.45rem;
+        }
+
+        form label,
+        input,
+        select,
+        textarea {
+          grid-column: auto;
+        }
+
+        form label:not(:first-child) {
+          margin-top: 0.55rem;
         }
 
         .section__headline {

@@ -1,0 +1,705 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audio/Visual Design System (Draft)</title>
+    <style>
+      :root {
+        --page: #101010;
+        --surface: #1b1b1b;
+        --surface-soft: #242424;
+        --border: #3a3a3a;
+        --text: #f3f3f3;
+        --muted: #b9b9b9;
+        --blue: #182bff;
+        --sky: #66c7f4;
+        --mint: #0ee6a8;
+        --lemon: #f3f55a;
+        --pink: #f77b85;
+        --orange: #f56f12;
+        --red: #f05449;
+        --clay: #c94f21;
+        --max-page: 1200px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 16px;
+        overflow-x: hidden;
+      }
+
+      body {
+        margin: 0;
+        width: 100%;
+        overflow-x: hidden;
+        background: var(--page);
+        color: var(--text);
+        font: 16px/1.5 Avenir, "Avenir Next", Futura, "Trebuchet MS", Arial,
+          sans-serif;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      h1,
+      h2,
+      h3,
+      p,
+      ul {
+        margin: 0;
+      }
+
+      .site-shell {
+        width: min(var(--max-page), 100%);
+        margin-inline: auto;
+        padding-bottom: 2.5rem;
+      }
+
+      .main-nav {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        padding: 1.25rem;
+        margin-bottom: 2.5rem;
+      }
+
+      .wordmark {
+        font-weight: 800;
+        letter-spacing: 0.02em;
+      }
+
+      .main-nav__links,
+      .main-nav__actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1.25rem;
+        font-weight: 700;
+      }
+
+      .main-nav__actions {
+        margin-left: auto;
+        font-size: 0.875rem;
+      }
+
+      .main-nav__actions a:first-child,
+      .link-blue {
+        color: var(--sky);
+      }
+
+      .menu-button {
+        display: none;
+        padding: 0;
+        color: var(--text);
+        font: inherit;
+        font-weight: 700;
+        background: transparent;
+        border: 0;
+      }
+
+      .hero-grid {
+        padding-bottom: 8.33333vw;
+        overflow: hidden;
+      }
+
+      .hero-cell {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        padding: 0;
+      }
+
+      .hero-cell:nth-child(1) {
+        width: 58.33333%;
+      }
+
+      .hero-cell:nth-child(2) {
+        width: 33.33333%;
+        margin-top: -16.66667%;
+        margin-left: 66.66667%;
+      }
+
+      .hero-cell:nth-child(3) {
+        width: 33.33333%;
+        margin-top: -4.16667%;
+        margin-left: 33.33333%;
+      }
+
+      .teaser {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 3 / 2;
+        overflow: hidden;
+        background: var(--surface);
+      }
+
+      .teaser__media {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, #2035ff 0%, #928ff0 55%, #1fd1c1 100%);
+      }
+
+      .teaser__content {
+        position: absolute;
+        inset: 0;
+        padding: 3.125rem;
+      }
+
+      .hero-cell:first-child .teaser__content {
+        padding: 4.16667vw;
+      }
+
+      .teaser h1,
+      .teaser h2 {
+        margin-top: 0.15em;
+        color: #fff;
+        font-weight: 800;
+        text-rendering: optimizeLegibility;
+      }
+
+      .teaser h1 {
+        max-width: 12em;
+        font-size: 2.5rem;
+        line-height: 1.2;
+      }
+
+      .teaser h2 {
+        font-size: 1.875rem;
+        line-height: 1.4;
+      }
+
+      .arrow::after {
+        content: "";
+        display: inline-block;
+        width: 0.3em;
+        height: 0.3em;
+        margin-left: 0.1em;
+        border-style: solid;
+        border-width: 0.09em 0.09em 0 0;
+        transform: rotate(50deg) skew(10deg) translateY(-50%);
+      }
+
+      .section {
+        position: relative;
+        padding: 0 8.33333vw 3.5rem;
+      }
+
+      .section + .section {
+        border-top: 2px solid #2f2f2f;
+        margin-top: 2rem;
+        padding-top: 2.75rem;
+      }
+
+      .section__headline {
+        margin: -0.1em 0 0.5em;
+        font-size: 3.75rem;
+        line-height: 1.4;
+        font-weight: 800;
+        text-rendering: optimizeLegibility;
+      }
+
+      .section__action {
+        position: absolute;
+        top: 2em;
+        right: 8.33333vw;
+        color: var(--sky);
+        font-size: 1.25rem;
+        font-weight: 700;
+      }
+
+      .swatch-grid {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 0.8rem;
+      }
+
+      .swatch {
+        background: var(--surface);
+        border: 1px solid var(--border);
+      }
+
+      .swatch__color {
+        aspect-ratio: 16 / 9;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .swatch__meta {
+        display: flex;
+        justify-content: space-between;
+        gap: 0.75rem;
+        padding: 0.65rem 0.75rem 0.75rem;
+        color: var(--text);
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas,
+          "Liberation Mono", "Courier New", monospace;
+        font-size: 0.8125rem;
+      }
+
+      .type-scale {
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      .type-s {
+        font-size: 0.875rem;
+        line-height: 1.5;
+      }
+
+      .type-m {
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+
+      .type-ml {
+        font-size: 1.25rem;
+        line-height: 1.5;
+      }
+
+      .type-l {
+        font-size: 1.875rem;
+        line-height: 1.4;
+      }
+
+      .type-xl {
+        font-size: 2.5rem;
+        line-height: 1.2;
+      }
+
+      .type-xxl {
+        font-size: 3.75rem;
+        line-height: 1.1;
+      }
+
+      .type-xxxl {
+        font-size: 5.625rem;
+        line-height: 1;
+      }
+
+      .type-xxxxl {
+        font-size: 6.875rem;
+        line-height: 1;
+      }
+
+      .button-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+
+      .button {
+        display: inline-block;
+        margin: 0;
+        padding: 0.28125rem 1.25rem;
+        color: #fff;
+        font: inherit;
+        font-weight: 800;
+        line-height: 1.5;
+        text-align: center;
+        cursor: pointer;
+        background: var(--blue);
+        border: 0.125rem solid transparent;
+        border-radius: 0;
+      }
+
+      .button--outline {
+        color: var(--text);
+        background: transparent;
+        border-color: currentColor;
+      }
+
+      .button--disabled {
+        color: #858585;
+        background-color: #2f2f2f;
+        cursor: default;
+      }
+
+      .button--text {
+        color: var(--sky);
+        background: transparent;
+        border-color: transparent;
+      }
+
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .card {
+        min-height: 12rem;
+        padding: 1rem;
+        background: var(--surface);
+        border: 2px solid var(--border);
+      }
+
+      .card p {
+        color: var(--muted);
+      }
+
+      .form-band {
+        padding: 8.33333vw;
+        background: var(--surface-soft);
+        font-weight: 700;
+      }
+
+      form {
+        display: grid;
+        gap: 1rem;
+        max-width: 68rem;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 0.28125rem 0.5rem;
+        color: var(--text);
+        font: inherit;
+        border: 0.125rem solid var(--border);
+        border-radius: 0;
+        background: var(--surface);
+      }
+
+      textarea {
+        min-height: 7.5rem;
+        resize: vertical;
+      }
+
+      ::placeholder {
+        color: var(--muted);
+      }
+
+      .footer {
+        display: grid;
+        gap: 1rem;
+        margin-top: 2.5rem;
+        padding: 2.5rem 1.25rem 3rem;
+        background: var(--surface);
+      }
+
+      .footer__headline {
+        font-size: 1.5rem;
+        line-height: 1.4;
+        font-weight: 800;
+      }
+
+      .footer__links {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0.75rem;
+        padding: 0;
+        list-style: none;
+      }
+
+      .bg-sky {
+        background: var(--sky);
+      }
+
+      .bg-blue {
+        background: var(--blue);
+      }
+
+      .bg-pink {
+        background: var(--pink);
+      }
+
+      .bg-lemon {
+        background: var(--lemon);
+      }
+
+      .bg-mint {
+        background: var(--mint);
+      }
+
+      .bg-orange {
+        background: var(--orange);
+      }
+
+      .bg-clay {
+        background: var(--clay);
+      }
+
+      .bg-red {
+        background: var(--red);
+      }
+
+      .bg-neutral {
+        background: #eeeeee;
+      }
+
+      @media screen and (max-width: 900px) {
+        .main-nav__links,
+        .main-nav__actions {
+          display: none;
+        }
+
+        .menu-button {
+          display: inline-block;
+          margin-left: auto;
+        }
+
+        .hero-cell {
+          width: 100% !important;
+          margin-top: 0 !important;
+          margin-left: 0 !important;
+          padding: 0.85rem;
+        }
+
+        .section,
+        .form-band {
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+
+        .section__headline {
+          font-size: 2.5rem;
+        }
+
+        .section__action {
+          position: static;
+          display: block;
+          margin-bottom: 1rem;
+        }
+
+        .swatch-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .card-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .type-scale > * {
+          max-width: 100%;
+          overflow-wrap: anywhere;
+          word-break: break-word;
+        }
+
+        .type-xxl {
+          font-size: 2.5rem;
+        }
+
+        .type-xxxl {
+          font-size: 3rem;
+        }
+
+        .type-xxxxl {
+          font-size: 3.5rem;
+        }
+
+        .footer__links {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header>
+        <nav class="main-nav" aria-label="Primary">
+          <a class="wordmark" href="#">Studio UI</a>
+          <div class="main-nav__links">
+            <a href="#">Create</a>
+            <a href="#">Perform</a>
+            <a href="#">Control</a>
+            <a href="#">Library</a>
+            <a href="#">Store</a>
+            <a href="#">Support</a>
+          </div>
+          <div class="main-nav__actions">
+            <a href="#">Try the demo</a>
+            <a href="#">Sign in</a>
+          </div>
+          <button class="menu-button" type="button">Menu</button>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero-grid">
+          <div class="hero-cell">
+            <article class="teaser">
+              <div class="teaser__media" aria-hidden="true"></div>
+              <a class="teaser__content" href="#">
+                <p class="type-m">Product update</p>
+                <h1>New tools for audio capture, modulation and performance</h1>
+                <span class="arrow link-blue">Explore update</span>
+              </a>
+            </article>
+          </div>
+          <div class="hero-cell">
+            <article class="teaser">
+              <div
+                class="teaser__media"
+                style="background-image: linear-gradient(130deg, #ed91f2 0%, #8adce5 40%, #daf478 100%)"
+                aria-hidden="true"
+              ></div>
+              <a class="teaser__content" href="#">
+                <p class="type-m">Learn</p>
+                <h2>Build a set with samples, devices and automation</h2>
+                <span class="arrow">Watch now</span>
+              </a>
+            </article>
+          </div>
+          <div class="hero-cell">
+            <article class="teaser">
+              <div
+                class="teaser__media"
+                style="background-image: linear-gradient(130deg, #182bff 0%, #0d9aa4 50%, #f56f12 100%)"
+                aria-hidden="true"
+              ></div>
+              <a class="teaser__content" href="#">
+                <p class="type-m">Artist story</p>
+                <h2>Improvising with hardware, software and shared timing</h2>
+                <span class="arrow">Read story</span>
+              </a>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section__headline">Color tokens</h2>
+          <div class="swatch-grid">
+            <article class="swatch">
+              <div class="swatch__color bg-sky"></div>
+              <div class="swatch__meta"><strong>sky</strong><span>#66C7F4</span></div>
+            </article>
+            <article class="swatch">
+              <div class="swatch__color bg-blue"></div>
+              <div class="swatch__meta"><strong>blue</strong><span>#182BFF</span></div>
+            </article>
+            <article class="swatch">
+              <div class="swatch__color bg-pink"></div>
+              <div class="swatch__meta"><strong>pink</strong><span>#F77B85</span></div>
+            </article>
+            <article class="swatch">
+              <div class="swatch__color bg-lemon"></div>
+              <div class="swatch__meta"><strong>lemon</strong><span>#F3F55A</span></div>
+            </article>
+            <article class="swatch">
+              <div class="swatch__color bg-mint"></div>
+              <div class="swatch__meta"><strong>mint</strong><span>#0EE6A8</span></div>
+            </article>
+            <article class="swatch">
+              <div class="swatch__color bg-orange"></div>
+              <div class="swatch__meta"><strong>orange</strong><span>#F56F12</span></div>
+            </article>
+            <article class="swatch">
+              <div class="swatch__color bg-clay"></div>
+              <div class="swatch__meta"><strong>clay</strong><span>#C94F21</span></div>
+            </article>
+            <article class="swatch">
+              <div class="swatch__color bg-red"></div>
+              <div class="swatch__meta"><strong>red</strong><span>#F05449</span></div>
+            </article>
+            <article class="swatch">
+              <div class="swatch__color bg-neutral"></div>
+              <div class="swatch__meta"><strong>neutral</strong><span>#EEEEEE</span></div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section__headline">
+            Type scale <a href="#" class="arrow link-blue">Type table</a>
+          </h2>
+          <a class="section__action" href="#">View specs</a>
+          <div class="type-scale">
+            <div class="type-s">type-s: 0.875rem</div>
+            <div class="type-m">type-m: 1rem</div>
+            <div class="type-ml">type-ml: 1.25rem</div>
+            <div class="type-l">type-l: 1.875rem</div>
+            <div class="type-xl">type-xl: 2.5rem</div>
+            <div class="type-xxl">type-xxl: 3.75rem</div>
+            <div class="type-xxxl">type-xxxl: 5.625rem</div>
+            <div class="type-xxxxl">type-xxxxl: 6.875rem</div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section__headline">Buttons</h2>
+          <a class="section__action" href="#">Reference</a>
+          <div class="button-list">
+            <button class="button" type="button">Primary</button>
+            <button class="button button--outline" type="button">Outline</button>
+            <button class="button button--disabled" type="button">Disabled</button>
+            <button class="button button--text" type="button">Text</button>
+          </div>
+          <div class="card-grid">
+            <article class="card">
+              <h3 class="type-ml">Primary</h3>
+              <p>High contrast, rectangular and direct.</p>
+            </article>
+            <article class="card">
+              <h3 class="type-ml">Outline</h3>
+              <p>Transparent control with current-color border.</p>
+            </article>
+            <article class="card">
+              <h3 class="type-ml">Text</h3>
+              <p>Low-emphasis action for secondary navigation.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="form-band">
+          <h2 class="type-ml">Forms</h2>
+          <form>
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="name@domain.com" />
+
+            <label for="region">Country</label>
+            <select id="region">
+              <option>United States</option>
+              <option>United Kingdom</option>
+              <option>Germany</option>
+            </select>
+
+            <label for="notes">Notes</label>
+            <textarea id="notes" placeholder="Write a short line of feedback"></textarea>
+          </form>
+        </section>
+
+        <section class="section">
+          <h2 class="section__headline">Utility patterns</h2>
+          <div class="card-grid">
+            <article class="card">
+              <h3 class="type-ml">Spacing</h3>
+              <p>Viewport-based rhythm with fixed desktop caps for editorial pages.</p>
+            </article>
+            <article class="card">
+              <h3 class="type-ml">State</h3>
+              <p>Strong focus indicators, bold links and clear disabled states.</p>
+            </article>
+            <article class="card">
+              <h3 class="type-ml">Grid language</h3>
+              <p>Large asymmetrical teasers followed by dense reference sections.</p>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <strong class="footer__headline">Audio/Visual Design System (Draft)</strong>
+        <p class="type-m">
+          A generic reference page for bold music-production software interfaces.
+        </p>
+        <ul class="footer__links">
+          <li><a href="#">Register product</a></li>
+          <li><a href="#">Company</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">News</a></li>
+          <li><a href="#">Tutorials</a></li>
+          <li><a href="#">Support</a></li>
+          <li><a href="#">Community</a></li>
+        </ul>
+      </footer>
+    </div>
+  </body>
+</html>

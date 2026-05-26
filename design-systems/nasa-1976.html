@@ -154,7 +154,7 @@
         .reg-mark::before { left: 50%; top: 0; bottom: 0; width: 1px; transform: translateX(-50%); }
         .reg-mark::after { top: 50%; left: 0; right: 0; height: 1px; transform: translateY(-50%); }
         .reg-mark.tr { top: var(--s-4); right: var(--s-4); }
-        .reg-mark.bl { bottom: var(--s-4); left: var(--s-4); }
+        .reg-mark.bl { bottom: var(--s-4); right: var(--s-4); }
 
         /* ——— Section ——— */
         section.spec {
@@ -550,6 +550,13 @@
         /* Utility */
         .row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-4); }
         @media (max-width: 720px) { .row-2 { grid-template-columns: 1fr; } }
+
+        @media (max-width: 720px) {
+            .reg-mark {
+                width: 48px;
+                height: 48px;
+            }
+        }
 
         .hairline { height: 1px; background: var(--rule); margin: var(--s-3) 0; }
 

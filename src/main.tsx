@@ -25,7 +25,7 @@ const systems: DesignSystem[] = [
   },
   {
     id: "music",
-    name: "Music Software UI",
+    name: "Audio Visual UI",
     file: "audio-visual-console.html",
     summary:
       "Dark software interface language for audio tools, performance workflows, forms, and utility states.",

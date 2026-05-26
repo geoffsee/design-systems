@@ -18,9 +18,17 @@ const systems: DesignSystem[] = [
     name: "NASA-inspired",
     file: "nasa-1976.html",
     summary:
-      "Editorial, federal-agency styling with strong typography, restrained color, and drop-in CSS tokens.",
+      "Editorial, federal-agency styling with source framing, audit criteria, restrained color, and drop-in CSS tokens.",
     category: "Editorial system",
-    sections: ["Color", "Type", "Components", "Demo Post", "Drop-in CSS"],
+    sections: [
+      "Method",
+      "Color",
+      "Type",
+      "Components",
+      "Demo Post",
+      "Drop-in CSS",
+      "Audit and Governance",
+    ],
     colors: ["#FC3D21", "#0B3D91", "#0A0A0A", "#F1ECE0", "#6E6A60"],
   },
   {
@@ -28,9 +36,18 @@ const systems: DesignSystem[] = [
     name: "Audio Visual UI",
     file: "audio-visual-console.html",
     summary:
-      "Dark software interface language for audio tools, performance workflows, forms, and utility states.",
+      "Dark software interface language for audio tools with research framing, accessibility criteria, and governance notes.",
     category: "Product system",
-    sections: ["Color tokens", "Typography", "Buttons", "Forms", "Utility patterns"],
+    sections: [
+      "Color tokens",
+      "Typography",
+      "Buttons",
+      "Forms",
+      "Utility patterns",
+      "Research frame",
+      "Accessibility criteria",
+      "Governance model",
+    ],
     colors: ["#66C7F4", "#182BFF", "#F77B85", "#F3F55A", "#0EE6A8", "#F56F12"],
   },
 ];

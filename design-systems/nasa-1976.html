@@ -314,6 +314,22 @@
         }
         .panel > * + * { margin-top: var(--s-2); }
         .panel { padding-top: calc(var(--s-4) + 12px); }
+        .research-list {
+            display: grid;
+            gap: var(--s-2);
+            list-style: none;
+            color: var(--mute-1);
+            font-size: var(--t-base);
+            line-height: 1.6;
+        }
+        .research-list strong {
+            display: block;
+            color: var(--ink);
+            font-family: var(--font-mono);
+            font-size: 11px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
 
         /* Buttons */
         .btn {
@@ -552,10 +568,41 @@
         @media (max-width: 720px) { .row-2 { grid-template-columns: 1fr; } }
 
         @media (max-width: 720px) {
+            .doc-bar .frame {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: var(--s-1);
+            }
+
+            .doc-bar .nav {
+                flex-wrap: wrap;
+                gap: var(--s-1) var(--s-2);
+            }
+
             .reg-mark {
                 width: 48px;
                 height: 48px;
             }
+
+            .section-header {
+                grid-template-columns: 1fr;
+                gap: var(--s-2);
+            }
+
+            .section-sub {
+                grid-column: 1;
+            }
+
+            .type-row {
+                grid-template-columns: 1fr;
+                gap: var(--s-2);
+            }
+
+            pre.code {
+                white-space: pre-wrap;
+                overflow-wrap: anywhere;
+            }
+
         }
 
         .hairline { height: 1px; background: var(--rule); margin: var(--s-3) 0; }
@@ -576,11 +623,13 @@
     <div class="frame">
         <div><span class="stamp">●</span> Doc 76-001 · Identity Standards · Rev. 04.26.2026</div>
         <nav class="nav">
+            <a href="#method">00 Method</a>
             <a href="#color">01 Color</a>
             <a href="#type">02 Type</a>
             <a href="#components">03 Components</a>
             <a href="#post">04 Demo</a>
             <a href="#code">05 Code</a>
+            <a href="#audit">06 Audit</a>
         </nav>
     </div>
 </header>
@@ -614,6 +663,51 @@
                 class="lnk" target="_blank" rel="noopener noreferrer">1976 NASA Graphics Standards Manual</a>.
             Built to be copied, pasted, and shipped.
         </p>
+    </section>
+
+    <!-- ============================================================
+         §00 SCHOLARLY FRAME
+         ============================================================ -->
+    <section class="spec" id="method">
+        <div class="section-header">
+            <div class="section-num">§ 00.00<br>Scholarly Frame</div>
+            <div>
+                <h2 class="section-title">Method</h2>
+                <p class="section-sub">Academic use requires more than a persuasive surface. This section records provenance, scope, citation expectations and evaluation criteria so the system can be critiqued, reproduced and revised.</p>
+            </div>
+        </div>
+
+        <div class="components">
+            <div class="panel">
+                <div class="panel-label">00.01 Corpus</div>
+                <ul class="research-list">
+                    <li><strong>Primary source</strong><a href="https://www.nasa.gov/wp-content/uploads/2015/01/nasa_graphics_manual_nhb_1430-2_jan_1976.pdf" class="lnk" target="_blank" rel="noopener noreferrer">NASA Graphics Standards Manual, NHB 1430.2, January 1976</a>.</li>
+                    <li><strong>Design object</strong>This page translates selected manual principles into web typography, color, spacing, components and editorial patterns.</li>
+                </ul>
+            </div>
+
+            <div class="panel">
+                <div class="panel-label">00.02 Method</div>
+                <ul class="research-list">
+                    <li><strong>Comparative analysis</strong>Map source principles to digital equivalents: limited palette, strict hierarchy, modular sections and technical annotation.</li>
+                    <li><strong>Implementation test</strong>Each claim should appear as either a rendered example, a reusable token or a documented component rule.</li>
+                </ul>
+            </div>
+
+            <div class="panel">
+                <div class="panel-label">00.03 Citation</div>
+                <p>NASA. 1976. <i>NASA Graphics Standards Manual, NHB 1430.2</i>. Washington, DC: National Aeronautics and Space Administration.</p>
+                <p style="color: var(--mute-1);">When citing this adaptation, include the page title, revision date, file name and the source manual above.</p>
+            </div>
+
+            <div class="panel">
+                <div class="panel-label">00.04 Scope</div>
+                <ul class="research-list">
+                    <li><strong>Included</strong>Editorial typography, token structure, component behavior and publication layout.</li>
+                    <li><strong>Excluded</strong>Official NASA identity usage, trademark guidance, mission-specific communication and production signage.</li>
+                </ul>
+            </div>
+        </div>
     </section>
 
     <!-- ============================================================
@@ -920,6 +1014,57 @@ blockquote {
                     <li>— Use Inter, Roboto, or system defaults</li>
                     <li>— Round button corners</li>
                     <li>— Add drop shadows except as offset blocks</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         §06 AUDIT AND GOVERNANCE
+         ============================================================ -->
+    <section class="spec" id="audit">
+        <div class="section-header">
+            <div class="section-num">§ 06.00<br>Audit Trail</div>
+            <div>
+                <h2 class="section-title">Audit and Governance</h2>
+                <p class="section-sub">A design system becomes academically useful when its decisions can be inspected over time. These criteria define what must be checked before the system is treated as stable.</p>
+            </div>
+        </div>
+
+        <div class="components">
+            <div class="panel">
+                <div class="panel-label">06.01 Accessibility</div>
+                <ul class="research-list">
+                    <li><strong>Contrast</strong>Body text, captions, links and controls must meet WCAG 2.2 AA contrast targets.</li>
+                    <li><strong>Keyboard</strong>Navigation, links and controls require visible focus, predictable order and no pointer-only interactions.</li>
+                    <li><strong>Reduced motion</strong>Any future animation must honor reduced-motion preferences.</li>
+                </ul>
+            </div>
+
+            <div class="panel">
+                <div class="panel-label">06.02 Reproducibility</div>
+                <ul class="research-list">
+                    <li><strong>Token source</strong>Color, type and spacing decisions should originate in declared variables, not one-off values.</li>
+                    <li><strong>Component proof</strong>Every component needs a rendered example and an implementation note.</li>
+                    <li><strong>Responsive proof</strong>Layouts must be checked at narrow, tablet and desktop widths before release.</li>
+                </ul>
+            </div>
+
+            <div class="panel">
+                <div class="panel-label">06.03 Governance</div>
+                <ul class="research-list">
+                    <li><strong>Decision log</strong>Record rationale, alternatives considered and affected sections for each material change.</li>
+                    <li><strong>Versioning</strong>Use dated revisions for tokens, components and page templates.</li>
+                    <li><strong>Deprecation</strong>Retire patterns only with migration guidance and a replacement example.</li>
+                </ul>
+            </div>
+
+            <div class="panel">
+                <div class="panel-label">06.04 Assessment</div>
+                <ul class="research-list">
+                    <li><strong>Coherence</strong>Can a reader identify hierarchy, source lineage and intended action without explanation?</li>
+                    <li><strong>Transfer</strong>Can the system support a new article, code block and citation without custom styling?</li>
+                    <li><strong>Critique</strong>Can another designer challenge a rule using evidence from the source or implementation?</li>
                 </ul>
             </div>
         </div>

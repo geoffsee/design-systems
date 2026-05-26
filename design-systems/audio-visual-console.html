@@ -348,6 +348,23 @@
         color: var(--muted);
       }
 
+      .card--dense {
+        min-height: auto;
+      }
+
+      .meta-list {
+        display: grid;
+        gap: 0.65rem;
+        padding: 0;
+        color: var(--muted);
+        list-style: none;
+      }
+
+      .meta-list strong {
+        display: block;
+        color: var(--text);
+      }
+
       .form-band {
         padding: 8.33333vw;
         background: var(--surface-soft);
@@ -684,6 +701,87 @@
             <article class="card">
               <h3 class="type-ml">Grid language</h3>
               <p>Large asymmetrical teasers followed by dense reference sections.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section__headline">Research frame</h2>
+          <div class="card-grid">
+            <article class="card card--dense">
+              <h3 class="type-ml">Research question</h3>
+              <p>
+                How can a dark audio-production interface balance performance speed,
+                editorial clarity and reliable system reuse?
+              </p>
+            </article>
+            <article class="card card--dense">
+              <h3 class="type-ml">Evidence base</h3>
+              <p>
+                Evaluate the system through task completion, token consistency,
+                contrast checks and component reuse across capture, library and account flows.
+              </p>
+            </article>
+            <article class="card card--dense">
+              <h3 class="type-ml">Known limits</h3>
+              <p>
+                The page is a visual reference. It still requires validation with
+                real track counts, long localized labels and assistive technology.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section__headline">Accessibility criteria</h2>
+          <div class="card-grid">
+            <article class="card card--dense">
+              <h3 class="type-ml">Perception</h3>
+              <ul class="meta-list">
+                <li><strong>Contrast</strong>Text and controls target WCAG 2.2 AA minimum contrast.</li>
+                <li><strong>Color use</strong>Status must pair color with text, shape or position.</li>
+              </ul>
+            </article>
+            <article class="card card--dense">
+              <h3 class="type-ml">Operation</h3>
+              <ul class="meta-list">
+                <li><strong>Keyboard</strong>Every command needs visible focus and logical tab order.</li>
+                <li><strong>Motion</strong>Transport and meter animation must respect reduced-motion preferences.</li>
+              </ul>
+            </article>
+            <article class="card card--dense">
+              <h3 class="type-ml">Comprehension</h3>
+              <ul class="meta-list">
+                <li><strong>Labels</strong>Inputs, device controls and destructive actions require explicit labels.</li>
+                <li><strong>Recovery</strong>Errors should state cause, affected field and next corrective action.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section__headline">Governance model</h2>
+          <div class="card-grid">
+            <article class="card card--dense">
+              <h3 class="type-ml">Versioning</h3>
+              <p>
+                Token, component and pattern changes require a dated entry with
+                rationale, affected surfaces and migration guidance.
+              </p>
+            </article>
+            <article class="card card--dense">
+              <h3 class="type-ml">Review protocol</h3>
+              <p>
+                Additions should pass design critique, accessibility review and
+                implementation review before becoming canonical.
+              </p>
+            </article>
+            <article class="card card--dense">
+              <h3 class="type-ml">Adoption metric</h3>
+              <p>
+                Track reuse by counting duplicated custom styles, unsupported variants
+                and unresolved exceptions per release.
+              </p>
             </article>
           </div>
         </section>

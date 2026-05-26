@@ -79,8 +79,12 @@ function App() {
   }, [query]);
 
   const activeSystem =
-    systems.find((system) => system.id === activeId) ?? filteredSystems[0] ?? systems[0];
-  const activeSystemPath = activeSystem ? `design-systems/${activeSystem.file}` : "";
+    systems.find((system) => system.id === activeId) ??
+    filteredSystems[0] ??
+    systems[0];
+  const activeSystemPath = activeSystem
+    ? `design-systems/${activeSystem.file}`
+    : "";
 
   return (
     <main className="app-shell">
@@ -108,7 +112,11 @@ function App() {
         <div className="system-list">
           {filteredSystems.map((system) => (
             <button
-              className={system.id === activeSystem?.id ? "system-item active" : "system-item"}
+              className={
+                system.id === activeSystem?.id
+                  ? "system-item active"
+                  : "system-item"
+              }
               key={system.id}
               onClick={() => setActiveId(system.id)}
               type="button"
@@ -138,7 +146,10 @@ function App() {
             </div>
           </header>
 
-          <section className="overview" aria-label={`${activeSystem.name} overview`}>
+          <section
+            className="overview"
+            aria-label={`${activeSystem.name} overview`}
+          >
             <div className="panel">
               <h3>Sections</h3>
               <div className="tags">
@@ -151,20 +162,30 @@ function App() {
               <h3>Palette</h3>
               <div className="swatches">
                 {activeSystem.colors.map((color) => (
-                  <span key={color} style={{ backgroundColor: color }} title={color} />
+                  <span
+                    key={color}
+                    style={{ backgroundColor: color }}
+                    title={color}
+                  />
                 ))}
               </div>
             </div>
           </section>
 
-          <section className="preview-panel" aria-label={`${activeSystem.name} preview`}>
+          <section
+            className="preview-panel"
+            aria-label={`${activeSystem.name} preview`}
+          >
             <div className="preview-toolbar">
               <span>{activeSystem.file}</span>
               <a href={activeSystemPath} target="_blank" rel="noreferrer">
                 Inspect full page
               </a>
             </div>
-            <iframe src={activeSystemPath} title={`${activeSystem.name} preview`} />
+            <iframe
+              src={activeSystemPath}
+              title={`${activeSystem.name} preview`}
+            />
           </section>
         </section>
       ) : (

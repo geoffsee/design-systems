@@ -38,7 +38,12 @@
         overflow-x: hidden;
         background: var(--page);
         color: var(--text);
-        font: 16px/1.5 Avenir, "Avenir Next", Futura, "Trebuchet MS", Arial,
+        font:
+          16px/1.5 Avenir,
+          "Avenir Next",
+          Futura,
+          "Trebuchet MS",
+          Arial,
           sans-serif;
       }
 
@@ -148,7 +153,12 @@
       .teaser__media {
         position: absolute;
         inset: 0;
-        background: linear-gradient(135deg, #2035ff 0%, #928ff0 55%, #1fd1c1 100%);
+        background: linear-gradient(
+          135deg,
+          #2035ff 0%,
+          #928ff0 55%,
+          #1fd1c1 100%
+        );
       }
 
       .teaser__content {
@@ -246,8 +256,9 @@
         gap: 0.75rem;
         padding: 0.65rem 0.75rem 0.75rem;
         color: var(--text);
-        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas,
-          "Liberation Mono", "Courier New", monospace;
+        font-family:
+          ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono",
+          "Courier New", monospace;
         font-size: 0.8125rem;
       }
 
@@ -580,7 +591,14 @@
             <article class="teaser">
               <div
                 class="teaser__media"
-                style="background-image: linear-gradient(130deg, #ed91f2 0%, #8adce5 40%, #daf478 100%)"
+                style="
+                  background-image: linear-gradient(
+                    130deg,
+                    #ed91f2 0%,
+                    #8adce5 40%,
+                    #daf478 100%
+                  );
+                "
                 aria-hidden="true"
               ></div>
               <a class="teaser__content" href="#">
@@ -594,7 +612,14 @@
             <article class="teaser">
               <div
                 class="teaser__media"
-                style="background-image: linear-gradient(130deg, #182bff 0%, #0d9aa4 50%, #f56f12 100%)"
+                style="
+                  background-image: linear-gradient(
+                    130deg,
+                    #182bff 0%,
+                    #0d9aa4 50%,
+                    #f56f12 100%
+                  );
+                "
                 aria-hidden="true"
               ></div>
               <a class="teaser__content" href="#">
@@ -611,39 +636,57 @@
           <div class="swatch-grid">
             <article class="swatch">
               <div class="swatch__color bg-sky"></div>
-              <div class="swatch__meta"><strong>sky</strong><span>#66C7F4</span></div>
+              <div class="swatch__meta">
+                <strong>sky</strong><span>#66C7F4</span>
+              </div>
             </article>
             <article class="swatch">
               <div class="swatch__color bg-blue"></div>
-              <div class="swatch__meta"><strong>blue</strong><span>#182BFF</span></div>
+              <div class="swatch__meta">
+                <strong>blue</strong><span>#182BFF</span>
+              </div>
             </article>
             <article class="swatch">
               <div class="swatch__color bg-pink"></div>
-              <div class="swatch__meta"><strong>pink</strong><span>#F77B85</span></div>
+              <div class="swatch__meta">
+                <strong>pink</strong><span>#F77B85</span>
+              </div>
             </article>
             <article class="swatch">
               <div class="swatch__color bg-lemon"></div>
-              <div class="swatch__meta"><strong>lemon</strong><span>#F3F55A</span></div>
+              <div class="swatch__meta">
+                <strong>lemon</strong><span>#F3F55A</span>
+              </div>
             </article>
             <article class="swatch">
               <div class="swatch__color bg-mint"></div>
-              <div class="swatch__meta"><strong>mint</strong><span>#0EE6A8</span></div>
+              <div class="swatch__meta">
+                <strong>mint</strong><span>#0EE6A8</span>
+              </div>
             </article>
             <article class="swatch">
               <div class="swatch__color bg-orange"></div>
-              <div class="swatch__meta"><strong>orange</strong><span>#F56F12</span></div>
+              <div class="swatch__meta">
+                <strong>orange</strong><span>#F56F12</span>
+              </div>
             </article>
             <article class="swatch">
               <div class="swatch__color bg-clay"></div>
-              <div class="swatch__meta"><strong>clay</strong><span>#C94F21</span></div>
+              <div class="swatch__meta">
+                <strong>clay</strong><span>#C94F21</span>
+              </div>
             </article>
             <article class="swatch">
               <div class="swatch__color bg-red"></div>
-              <div class="swatch__meta"><strong>red</strong><span>#F05449</span></div>
+              <div class="swatch__meta">
+                <strong>red</strong><span>#F05449</span>
+              </div>
             </article>
             <article class="swatch">
               <div class="swatch__color bg-neutral"></div>
-              <div class="swatch__meta"><strong>neutral</strong><span>#EEEEEE</span></div>
+              <div class="swatch__meta">
+                <strong>neutral</strong><span>#EEEEEE</span>
+              </div>
             </article>
           </div>
         </section>
@@ -670,8 +713,12 @@
           <a class="section__action" href="#">Reference</a>
           <div class="button-list">
             <button class="button" type="button">Primary</button>
-            <button class="button button--outline" type="button">Outline</button>
-            <button class="button button--disabled" type="button">Disabled</button>
+            <button class="button button--outline" type="button">
+              Outline
+            </button>
+            <button class="button button--disabled" type="button">
+              Disabled
+            </button>
             <button class="button button--text" type="button">Text</button>
           </div>
           <div class="card-grid">
@@ -704,7 +751,10 @@
             </select>
 
             <label for="notes">Notes</label>
-            <textarea id="notes" placeholder="Write a short line of feedback"></textarea>
+            <textarea
+              id="notes"
+              placeholder="Write a short line of feedback"
+            ></textarea>
           </form>
         </section>
 
@@ -713,15 +763,22 @@
           <div class="card-grid">
             <article class="card">
               <h3 class="type-ml">Spacing</h3>
-              <p>Viewport-based rhythm with fixed desktop caps for editorial pages.</p>
+              <p>
+                Viewport-based rhythm with fixed desktop caps for editorial
+                pages.
+              </p>
             </article>
             <article class="card">
               <h3 class="type-ml">State</h3>
-              <p>Strong focus indicators, bold links and clear disabled states.</p>
+              <p>
+                Strong focus indicators, bold links and clear disabled states.
+              </p>
             </article>
             <article class="card">
               <h3 class="type-ml">Grid language</h3>
-              <p>Large asymmetrical teasers followed by dense reference sections.</p>
+              <p>
+                Large asymmetrical teasers followed by dense reference sections.
+              </p>
             </article>
           </div>
         </section>
@@ -732,22 +789,24 @@
             <article class="card card--dense">
               <h3 class="type-ml">Research question</h3>
               <p>
-                How can a dark audio-production interface balance performance speed,
-                editorial clarity and reliable system reuse?
+                How can a dark audio-production interface balance performance
+                speed, editorial clarity and reliable system reuse?
               </p>
             </article>
             <article class="card card--dense">
               <h3 class="type-ml">Evidence base</h3>
               <p>
                 Evaluate the system through task completion, token consistency,
-                contrast checks and component reuse across capture, library and account flows.
+                contrast checks and component reuse across capture, library and
+                account flows.
               </p>
             </article>
             <article class="card card--dense">
               <h3 class="type-ml">Known limits</h3>
               <p>
-                The page is a visual reference. It still requires validation with
-                real track counts, long localized labels and assistive technology.
+                The page is a visual reference. It still requires validation
+                with real track counts, long localized labels and assistive
+                technology.
               </p>
             </article>
           </div>
@@ -759,22 +818,40 @@
             <article class="card card--dense">
               <h3 class="type-ml">Perception</h3>
               <ul class="meta-list">
-                <li><strong>Contrast</strong>Text and controls target WCAG 2.2 AA minimum contrast.</li>
-                <li><strong>Color use</strong>Status must pair color with text, shape or position.</li>
+                <li>
+                  <strong>Contrast</strong>Text and controls target WCAG 2.2 AA
+                  minimum contrast.
+                </li>
+                <li>
+                  <strong>Color use</strong>Status must pair color with text,
+                  shape or position.
+                </li>
               </ul>
             </article>
             <article class="card card--dense">
               <h3 class="type-ml">Operation</h3>
               <ul class="meta-list">
-                <li><strong>Keyboard</strong>Every command needs visible focus and logical tab order.</li>
-                <li><strong>Motion</strong>Transport and meter animation must respect reduced-motion preferences.</li>
+                <li>
+                  <strong>Keyboard</strong>Every command needs visible focus and
+                  logical tab order.
+                </li>
+                <li>
+                  <strong>Motion</strong>Transport and meter animation must
+                  respect reduced-motion preferences.
+                </li>
               </ul>
             </article>
             <article class="card card--dense">
               <h3 class="type-ml">Comprehension</h3>
               <ul class="meta-list">
-                <li><strong>Labels</strong>Inputs, device controls and destructive actions require explicit labels.</li>
-                <li><strong>Recovery</strong>Errors should state cause, affected field and next corrective action.</li>
+                <li>
+                  <strong>Labels</strong>Inputs, device controls and destructive
+                  actions require explicit labels.
+                </li>
+                <li>
+                  <strong>Recovery</strong>Errors should state cause, affected
+                  field and next corrective action.
+                </li>
               </ul>
             </article>
           </div>
@@ -800,8 +877,8 @@
             <article class="card card--dense">
               <h3 class="type-ml">Adoption metric</h3>
               <p>
-                Track reuse by counting duplicated custom styles, unsupported variants
-                and unresolved exceptions per release.
+                Track reuse by counting duplicated custom styles, unsupported
+                variants and unresolved exceptions per release.
               </p>
             </article>
           </div>
@@ -809,9 +886,12 @@
       </main>
 
       <footer class="footer">
-        <strong class="footer__headline">Audio/Visual Design System (Draft)</strong>
+        <strong class="footer__headline"
+          >Audio/Visual Design System (Draft)</strong
+        >
         <p class="type-m">
-          A generic reference page for bold music-production software interfaces.
+          A generic reference page for bold music-production software
+          interfaces.
         </p>
         <ul class="footer__links">
           <li><a href="#">Register product</a></li>

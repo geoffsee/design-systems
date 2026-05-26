@@ -124,12 +124,17 @@
         width: 33.33333%;
         margin-top: -16.66667%;
         margin-left: 66.66667%;
+        overflow: hidden;
       }
 
       .hero-cell:nth-child(3) {
         width: 33.33333%;
         margin-top: -4.16667%;
         margin-left: 33.33333%;
+      }
+
+      .hero-cell:nth-child(2) .teaser {
+        transform: translateX(4.16667%);
       }
 
       .teaser {
@@ -472,6 +477,22 @@
           margin-top: 0 !important;
           margin-left: 0 !important;
           padding: 0.85rem;
+        }
+
+        .hero-cell:nth-child(2) {
+          overflow: visible;
+        }
+
+        .hero-cell:nth-child(2) .teaser {
+          transform: none;
+        }
+
+        .hero-cell:first-child .teaser {
+          min-height: 18rem;
+        }
+
+        .teaser h1 {
+          font-size: 2rem;
         }
 
         .section,
